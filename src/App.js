@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Home from './Home'
 import Profile from './Profile'
+import Fcomponent from './Fcomponent'
 
 function App() {
   return (
@@ -20,9 +21,11 @@ function App() {
         >
           Bhushan First React App
         </a> 
-        <Profile />
+        
+        
         <Home />
-
+        <Profile />
+        <Fcomponent text = "Function component text" />
       </header>
     </div>
   );
