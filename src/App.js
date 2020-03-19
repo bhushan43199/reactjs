@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Home from './Home'
+import Profile from './Profile'
 
 function App() {
   return (
@@ -17,7 +19,10 @@ function App() {
           rel="noopener noreferrer"
         >
           Bhushan First React App
-        </a>
+        </a> 
+        <Profile />
+        <Home />
+
       </header>
     </div>
   );
