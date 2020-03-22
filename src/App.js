@@ -1,9 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Home from './Home'
-import Profile from './Profile'
-import Fcomponent from './Fcomponent'
+import Home from './Home';
+import Profile from './Profile';
+import Fcomponent from './Fcomponent';
+import Prop from './Prop';
+
+import Pstate from './Pstate';
 
 function App() {
   return (
@@ -22,10 +25,12 @@ function App() {
           Bhushan First React App
         </a> 
         
-        
+        <Prop text= {{name: "Montu"}} data= "Profile Data"/>
         <Home />
         <Profile />
         <Fcomponent text = "Function component text" />
+        <Pstate />
+        
       </header>
     </div>
   );
