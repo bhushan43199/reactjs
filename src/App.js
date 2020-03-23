@@ -12,13 +12,15 @@ import Pstate from './Pstate';
 
 
 class App extends React.Component {
-  constructor()
-  {
+  constructor() {
+    // super() needed because state will use "this" keyword
     super();
     // Video 12 ComponentDidMount
 
-    this.state={
-      data:null
+    this.state = {
+      // 12.    data: null
+      active: null,
+      who: null
     }
     console.warn('constructor')
   }
@@ -26,10 +28,17 @@ class App extends React.Component {
 
   // react lifecycle
   // 12.method calling componentDidMount
-  componentDidMount()
-  { 
-    this.setState({data:"Updated"})
+  componentDidMount() {
+    this.setState({ data: "Updated" })
     console.warn("componentDidMount")
+  }
+
+  componentDidUpdate(){
+    console.warn("Update")
+    // to call setState method must use condition 
+    if(this.state.who==null){
+      this.setState({who:"Montu Patel"})
+    }
   }
 
   render() {
@@ -62,8 +71,10 @@ class App extends React.Component {
           :null
         }
       */}
-          <button onClick={() => { alert('Clicked') }}>Click Me</button>
-
+          {/* Video 13 ComponentDidUpdate*/}
+          <h1>React ComponentDidUpdate {this.state.who}</h1>
+          <button onClick={() => {this.setState({active:"yes"})}}>Click Me</button>
+         
         </header>
       </div>
     );
