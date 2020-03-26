@@ -7,6 +7,8 @@ import Fcomponent from './Fcomponent';
 import Prop from './Prop';
 
 import Pstate from './Pstate';
+import User from './User';
+import Form from './Form'
 // this constructor is for hide and show click me button and state 
 
 
@@ -18,9 +20,11 @@ class App extends React.Component {
     // Video 12 ComponentDidMount
 
     this.state = {
-      // 12.    data: null
+      // 12. ComponentDidMount   data: null
       active: null,
-      who: null
+      who: null,
+      toggle:true
+
     }
     console.warn('constructor')
   }
@@ -74,7 +78,15 @@ class App extends React.Component {
           {/* Video 13 ComponentDidUpdate*/}
           <h1>React ComponentDidUpdate {this.state.who}</h1>
           <button onClick={() => {this.setState({active:"yes"})}}>Click Me</button>
-         
+          {
+            this.state.toggle?
+            <User />:null
+
+            
+          }
+          {/**ComponentWillUnmount */}
+          <button onClick={()=>{this.setState({toggle:!this.state.toggle})}}>Delete User</button>
+          <Form />
         </header>
       </div>
     );
