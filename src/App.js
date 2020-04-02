@@ -9,6 +9,7 @@ import Prop from './Prop';
 import Pstate from './Pstate';
 import User from './User';
 import Form from './Form'
+import Button from './Button'
 // this constructor is for hide and show click me button and state 
 
 
@@ -30,7 +31,7 @@ class App extends React.Component {
   }
 
 
-  // react lifecycle
+// react lifecycle
   // 12.method calling componentDidMount
   componentDidMount() {
     this.setState({ data: "Updated" })
@@ -87,6 +88,7 @@ class App extends React.Component {
           {/**ComponentWillUnmount */}
           <button onClick={()=>{this.setState({toggle:!this.state.toggle})}}>Delete User</button>
           <Form />
+          <Button />
         </header>
       </div>
     );
