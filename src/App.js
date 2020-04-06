@@ -24,8 +24,13 @@ class App extends React.Component {
       // 12. ComponentDidMount   data: null
       active: null,
       who: null,
-      toggle:true
-
+      toggle:true,
+      // video 20. form validation
+      name: "",
+      password: "",
+      nameError:"",
+      passwordError:"",
+    
     }
     console.warn('constructor')
   }
@@ -45,6 +50,36 @@ class App extends React.Component {
       this.setState({who:"Montu Patel"})
     }
   }
+
+  valid(){
+    if(!this.state.name.includes("@") && this.state.password.length<5)
+    {
+      this.setState({nameError:"Invalid Name", passwordError:"Length should be more then 5"})
+    }
+    else if(!this.state.name.includes("@") )
+    {
+      this.setState({nameError:"Invalid Name"})
+    }
+    else if(this.state.password.length<5)
+    {
+      this.setState({passwordError:"Length should be more then 5"})
+    }
+    else{
+      return true;
+    }
+  }
+
+  submit(){
+    
+    {
+      this.setState({nameError:"", passwordError:""})
+    }
+    if(this.valid())
+    {
+    alert("form submited")
+    }
+  }
+
 
   render() {
     console.warn('render')
@@ -89,6 +124,16 @@ class App extends React.Component {
           <button onClick={()=>{this.setState({toggle:!this.state.toggle})}}>Delete User</button>
           <Form />
           <Button />
+          {/**Video 20. form validation  */}
+
+
+          <h1>Video 20 Form Handleling </h1>
+
+        <input type="text" onChange={(event)=>{this.setState({name:event.target.value})}}/>
+        <p>{this.state.nameError}</p>
+        <input type="password" onChange={(event)=>{this.setState({password:event.target.value})}}/>
+        <p>{this.state.passwordError}</p>
+        <button onClick={()=>this.submit()}>Submit</button>
         </header>
       </div>
     );
