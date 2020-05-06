@@ -1,10 +1,12 @@
-import React from 'react';
+import React,{useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Button, Alert, variant, idx, Form, Modal } from 'react-bootstrap'
 import { render } from 'react-dom';
 import User from './User'
 import ErrorBound from "./ErrorBound"
+import Home from './Home'
+
 
 class App extends React.Component{
 
@@ -22,6 +24,8 @@ class App extends React.Component{
   }
 
 render() {
+  const [count, setCount]=useState(0)
+  const [data,setData]=useState(100)
   return (
     <div className="App">
       <header className="App-header">
@@ -81,6 +85,7 @@ render() {
         
         
       </header>
+      <Home data ={data}/>
     </div>
   );
 }
