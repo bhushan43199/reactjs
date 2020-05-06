@@ -21,6 +21,7 @@ class App extends React.Component {
     // super() needed because state will use "this" keyword
     super();
     // Video 12 ComponentDidMount
+    
 
     this.state = {
       // 12. ComponentDidMount   data: null
@@ -39,10 +40,25 @@ class App extends React.Component {
 
       ],
       // Fetch API Video no 23
-      user: null
+      user: null,
+
+      
 
     }
+    // video 25:refs
+
+    this.userRef=React.createRef();
     console.warn('constructor')
+  }
+
+  // video 25: Ref
+  editVal()
+  { 
+    this.userRef.current.value="10000"
+  
+
+    console.warn(this.userRef)
+    
   }
 
 
@@ -185,6 +201,12 @@ class App extends React.Component {
           :
           null
         }
+
+        {/* Video 25 Refs. In react*/}
+        <h1>Ref in React</h1>
+
+        <input ref={this.userRef} type="text" name ="User" />
+        <button onClick={()=>this.editVal()}>Click me</button>
 
         </header>
       </div>
